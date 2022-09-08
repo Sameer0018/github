@@ -1,0 +1,91 @@
+<style type='text/css'>
+    .root{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        
+    }
+    .box{
+        height: 400px;
+        width: 470px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0px 0px 15px 5px black;
+    }
+
+    .gap{
+        margin-top: 10px;
+    }
+ </style>
+<script>
+
+    function printSeries()
+    {
+    var a = fnumber.value
+    var b = snumber.value
+    var c = 0
+    var i = 0
+
+    var series = []
+
+    series.push(a)
+    series.push(b)
+
+    for(i=0;i<10;i++)
+    {
+        c = parseInt(a)+parseInt(b)
+        series.push(c)
+        a=b
+        b=c
+    }
+
+    result.innerHTML=series.toString()
+
+    }
+</script>
+
+
+    <html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+         <title>
+        Fibonacci Series
+         </title>
+
+         <body style="background-color: #130f40">
+            <div class="root">
+                <div class="box">
+                    <div class="form-group col-md-3">
+                        <div style="letter-spacing: 1; font-weight: bold; font-size: 20px; width: 200; " >
+                            <center>
+                           Fibonacci Series
+                            </center>
+                        </div>
+
+                          <div class="gap">
+                            <label><b>Enter First Number</b></label>
+                          <input type="number" name="firstnumber" class="form-control" id="fnumber" placeholder="first digit" style="width: 300px;">
+                          </div>
+
+                          <div class="gap">
+                            <label><b>Enter Second Number</b></label>
+                          <input type="number" name="secondnumber" class="form-control" id="snumber" placeholder="second digit" style="width: 300px;">
+                          </div>
+
+                          <div class="gap">
+                            <!-- <button type="submit" class="btn btn-info" style="width: 300px;">Answer</button> -->
+                            <button type="button" class="btn btn-info" onclick={printSeries()} style="width: 300px;">Answer</button>
+
+                        </div>
+                        <div id="result" class="gap">
+                    
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+         </body>
+    </html>
